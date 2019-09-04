@@ -15,6 +15,94 @@
 
     <body>
 
+        <div class="container">
+            <div class="left">
+                <div class="heading__container">
+                    <span class="heading">Loan Calculator Application</span>
+                </div>
+
+                <div class="section__form">
+                    <div class="form">
+                        <div class="form__input-container">
+                            <label for="amount" class="form__label">Amount</label>
+                            <input type="number" name="amount" class="form__input" id="amount">
+                        </div>
+                        <div class="form__input-container">
+                            <label for="interest" class="form__label">Interest</label>
+                            <input type="number" name="interest" class="form__input" id="interest">
+                        </div>
+                        <div class="form__input-container">
+                            <label for="years" class="form__label">Year(s)</label>
+                            <input type="number" name="years" class="form__input" id="years">
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Calculate" class="form__button" id="btn-calculate">
+                        </div>
+                    </div>
+
+                    <div class="form">
+                        <div class="form__input-container">
+                            <label for="return" class="form__label">Total Return Payment</label>
+                            <input type="text" name="return" class="form__input" id="amount" disabled>
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Add to list" class="form__button" id="btn-add">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+
+                <div class="content__holder">
+                    <span class="span-heading">Records</span>
+
+                    <div class="totals__list">
+                        <!-- Book items -->
+                        <div class="record" id="record-0">
+                            <div class="record__content">
+                                <div class="record__payment">
+                                    <span class="record__label">Total Payment:</span>
+                                    16000
+                                </div>
+                                <div class="record__interest">
+                                    <span class="record__label">Total Interests:</span>
+                                    1000
+                                </div>
+                                <div class="record__years">
+                                    <span class="record__label">Total n.o Year:</span>
+                                    2
+                                </div>
+                            </div>
+                            <div class="record__delete">
+                                <button class="record__delete-btn">Remove</button>
+                            </div>
+                        </div>
+
+                        <div class="record" id="record-0">
+                            <div class="record__content">
+                                <div class="record__payment">
+                                    <span class="record__label">Total Payment:</span>
+                                    16000
+                                </div>
+                                <div class="record__interest">
+                                    <span class="record__label">Total Interests:</span>
+                                    1000
+                                </div>
+                                <div class="record__years">
+                                    <span class="record__label">Total n.o Year:</span>
+                                    2
+                                </div>
+                            </div>
+                            <div class="record__delete">
+                                <button class="record__delete-btn">Remove</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="js/app.js"></script>
     </body>
 
