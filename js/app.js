@@ -85,7 +85,8 @@ const ViewController = (function() {
 		amount: "amount",
 		interest: "interest",
 		years: "years",
-		btnCalculate: "btn-calculate"
+		btnCalculate: "btn-calculate",
+		return: "totalReturn"
 	};
 
 	return {
@@ -95,6 +96,11 @@ const ViewController = (function() {
 				interest: document.getElementById(domStrings.interest).value,
 				years: document.getElementById(domStrings.years).value
 			};
+		},
+
+		addTotalRetunToUi: obj => {
+			let retInputVal = document.getElementById(domStrings.return);
+			retInputVal.value = obj.totals;
 		},
 
 		// Clear the input fields and set the first field to focus
@@ -133,19 +139,20 @@ const AppController = (function(dataMd, uiCtrl) {
 	};
 
 	const calculateTotals = () => {
-		let input;
+		let input, newRecord;
 
 		// 1. Get the input data
 		input = uiCtrl.getInput();
 
 		if (input.amount !== "" && input.interest !== "" && input.years !== "") {
 			// 2. Add the data in a data structure
-			dataMd.addFields(input.amount, input.interest, input.years);
+			newRecord = dataMd.addFields(input.amount, input.interest, input.years);
 
 			// 3. calculate the individual return total for every record
 			dataMd.calculateTotal();
 
 			// 4. Add the new item to the input box
+			uiCtrl.addTotalRetunToUi(newRecord);
 		}
 	};
 
